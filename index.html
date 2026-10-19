@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff4384">
+
+    <title>ArLa Universe 💗</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="./app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="floating-heart heart-one">💗</div>
+    <div class="floating-heart heart-two">💕</div>
+    <div class="floating-heart heart-three">💖</div>
+
+    <!-- Mobile header -->
+    <header class="mobile-header">
+        <a href="#" class="brand" data-page="home">
+            <span class="brand-icon">♡</span>
+            ArLa Universe
+        </a>
+
+        <button id="menuToggle" class="menu-toggle"
+                aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="#" class="brand desktop-brand" data-page="home">
+                <span class="brand-icon">♡</span>
+                <span>
+                    <strong>ArLa Universe</strong>
+                    <small>Our little world 💗</small>
+                </span>
+            </a>
+
+            <div class="couple-card">
+                <div class="couple-avatars">
+                    <div class="avatar avatar-arry">A</div>
+                    <div class="avatar avatar-ella">E</div>
+                    <span class="avatar-heart">♥</span>
+                </div>
+
+                <h3>Arry & Ella</h3>
+                <p>Two hearts, one universe.</p>
+            </div>
+
+            <p class="nav-heading">OUR LITTLE WORLD</p>
+
+            <nav class="navigation" aria-label="Main navigation">
+
+                <button class="nav-link active" data-page="home">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </button>
+
+                <button class="nav-link" data-page="chat">
+                    <span class="nav-icon">💬</span>
+                    <span>Our Chat</span>
+                    <span class="nav-badge">♡</span>
+                </button>
+
+                <button class="nav-link" data-page="story">
+                    <span class="nav-icon">📖</span>
+                    <span>Our Story</span>
+                </button>
+
+                <button class="nav-link" data-page="memories">
+                    <span class="nav-icon">📸</span>
+                    <span>Memories</span>
+                </button>
+
+                <button class="nav-link" data-page="letters">
+                    <span class="nav-icon">💌</span>
+                    <span>Love Letters</span>
+                </button>
+
+                <button class="nav-link" data-page="special">
+                    <span class="nav-icon">🎂</span>
+                    <span>Special Days</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-heart">♥</div>
+                <p>My favorite place<br>is wherever you are.</p>
+                <span>Made with love for Ella 💗</span>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HOME -->
+            <section class="page-section active" id="home">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">WELCOME TO OUR WORLD 💕</p>
+                        <h1>Hello, my love!</h1>
+                        <p class="muted">A little universe made just for us.</p>
+                    </div>
+
+                    <div class="topbar-heart">♡</div>
+                </div>
+
+                <div class="hero-card">
+
+                    <div class="hero-content">
+                        <span class="pill">MY PERSON. MY PEACE. MY LOVE.</span>
+
+                        <h2>In a universe<br>
+                            full of stars,<br>
+                            <span>I'd still choose you.</span>
+                        </h2>
+
+                        <p>
+                            If I could choose one person to find in every
+                            lifetime, in every universe, and in every version
+                            of my story, it would always be you, Ella.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <button class="btn btn-white" data-go="letters">
+                                Read a love letter 💌
+                            </button>
+
+                            <button class="btn btn-outline" data-go="story">
+                                Our story →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-image">
+                        <img
+                            src="./Assets/photo1.jpg"
+                            alt="A special memory of Arry and Ella"
+                            onerror="this.parentElement.classList.add('image-missing')">
+
+                        <div class="image-caption">
+                            <span>♡</span>
+                            My favorite person
+                        </div>
+                    </div>
+
+                    <div class="hero-decoration">♡</div>
+                </div>
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">JUST LOOK AT US</p>
+                        <h2>Our little universe ✨</h2>
+                    </div>
+                    <span class="heading-heart">💗</span>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon pink-bg">💕</div>
+                        <p class="stat-label">Days together</p>
+                        <h3 id="daysTogether">...</h3>
+                        <span>And counting forever</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon cream-bg">💌</div>
+                        <p class="stat-label">Love letters</p>
+                        <h3>∞</h3>
+                        <span>Words I could never finish</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon pink-bg">🌷</div>
+                        <p class="stat-label">My favorite girl</p>
+                        <h3>Ella</h3>
+                        <span>Always and always</span>
+                    </div>
+                </div>
+
+                <div class="home-bottom-grid">
+
+                    <div class="soft-card quote-card">
+                        <span class="quote-mark">“</span>
+                        <h3>A little reminder</h3>
+                        <p>
+                            Loving you isn't just about the beautiful days.
+                            It's about choosing understanding, honesty,
+                            patience, and each other, even when life gets hard.
+                        </p>
+                        <span class="signature">Forever your Arry ♡</span>
+                    </div>
+
+                    <div class="soft-card quick-links">
+                        <h3>Where shall we go? 💗</h3>
+
+                        <button data-go="chat" class="quick-link">
+                            <span>💬</span>
+                            <span>
+                                <strong>Our Chat</strong>
+                                <small>Leave a little message</small>
+                            </span>
+                            <b>→</b>
+                        </button>
+
+                        <button data-go="memories" class="quick-link">
+                            <span>📸</span>
+                            <span>
+                                <strong>Our Memories</strong>
+                                <small>Look at our favorite moments</small>
+                            </span>
+                            <b>→</b>
+                        </button>
+
+                        <button data-go="special" class="quick-link">
+                            <span>🎀</span>
+                            <span>
+                                <strong>Our Special Days</strong>
+                                <small>Celebrate our milestones</small>
+                            </span>
+                            <b>→</b>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="closing-note">
+                    <span>♡</span>
+                    Built for two hearts that found each other.
+                    <span>♡</span>
+                </div>
+
+            </section>
+
+
+            <!-- OUR CHAT -->
+            <section class="page-section" id="chat">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">JUST YOU AND ME 💗</p>
+                        <h1>Our Chat</h1>
+                        <p class="muted">A little space for our words and hearts.</p>
+                    </div>
+
+                    <div class="topbar-heart">💬</div>
+                </div>
+
+                <div class="chat-card">
+
+                    <div class="chat-header">
+                        <div class="chat-avatar">A<span>♥</span>E</div>
+
+                        <div class="chat-person">
+                            <h3>Arry & Ella</h3>
+                            <p>Our little corner of the universe</p>
+                        </div>
+
+                        <span class="chat-heart">♡</span>
+                    </div>
+
+                    <div class="demo-notice">
+                        💗 <strong>Private preview:</strong>
+                        Messages are saved in this browser only.
+                        They are not delivered to Ella's device.
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages"
+                         aria-live="polite">
+
+                        <div class="chat-date">THE BEGINNING OF SOMETHING BEAUTIFUL</div>
+
+                        <div class="message-row received">
+                            <div class="message-avatar">E</div>
+
+                            <div class="message-bubble">
+                                <p>Welcome to our little universe, Arry. 💗</p>
+                                <span>Ella's side</span>
+                            </div>
+                        </div>
+
+                        <div class="message-row sent">
+                            <div class="message-bubble">
+                                <p>Every little corner reminds me of you. ❤️</p>
+                                <span>Your side</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <form id="chatForm" class="chat-form">
+
+                        <label for="chatInput" class="sr-only">
+                            Write your message
+                        </label>
+
+                        <input
+                            type="text"
+                            id="chatInput"
+                            placeholder="Write something sweet..."
+                            maxlength="1000"
+                            autocomplete="off"
+                            required>
+
+                        <button type="button" id="emojiButton"
+                                class="emoji-button"
+                                aria-label="Add a heart">💗</button>
+
+                        <button type="submit" class="send-button">
+                            Send ➤
+                        </button>
+
+                    </form>
+
+                    <div class="chat-footer">
+                        <span>Made with love</span>
+                        <span>♡ ArLa ♡</span>
+                    </div>
+
+                </div>
+
+                <p class="small-note">
+                    This is a working local chat preview. To exchange messages
+                    with Ella across different phones, we will need to connect
+                    the website to a secure backend such as Supabase.
+                </p>
+
+            </section>
+
+
+            <!-- OUR STORY -->
+            <section class="page-section" id="story">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">CHAPTERS OF US 📖</p>
+                        <h1>Our Story</h1>
+                        <p class="muted">Every love has a beginning. This is ours.</p>
+                    </div>
+
+                    <div class="topbar-heart">💕</div>
+                </div>
+
+                <div class="story-banner">
+                    <span class="story-banner-icon">♡</span>
+                    <p>Somehow, out of everyone in this world, we found each other.</p>
+                    <span class="signature">And I'm glad we did. — Arry</span>
+                </div>
+
+                <div class="timeline">
+
+                    <article class="timeline-item">
+                        <div class="timeline-icon">📱</div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">SEPTEMBER 2025</span>
+                            <h3>The unexpected beginning</h3>
+                            <p>
+                                A TikTok video, a familiar username watermark,
+                                and a message that opened the door to something
+                                neither of us knew would become so important.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-icon">💌</div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">OCTOBER 2, 2025</span>
+                            <h3>The day we became us</h3>
+                            <p>
+                                Pickup lines, playful conversations, and a
+                                question that changed everything.
+                                She said yes, and our relationship officially began.
+                            </p>
+                            <span class="memory-tag">Our anniversary ❤️</span>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-icon">🌹</div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">JULY 3, 2026</span>
+                            <h3>The day the distance felt smaller</h3>
+                            <p>
+                                We finally met in person on Arry's birthday.
+                                Four beautiful days, our first hug, our first
+                                kiss, and memories that made every moment of
+                                waiting feel worth it.
+                            </p>
+                            <span class="memory-tag">A moment to keep forever 💗</span>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-icon">✨</div>
+
+                        <div class="timeline-card">
+                            <span class="timeline-date">EVERY DAY AFTER</span>
+                            <h3>The story we're still writing</h3>
+                            <p>
+                                There is so much more ahead of us: more laughter,
+                                more dates, more memories, more lessons, and
+                                more opportunities to love each other better.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="story-ending">
+                    <h2>Our story isn't finished. 💗</h2>
+                    <p>The best chapters are the ones we haven't lived yet.</p>
+                </div>
+
+            </section>
+
+
+            <!-- MEMORIES -->
+            <section class="page-section" id="memories">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">LITTLE MOMENTS, BIG FEELINGS 📸</p>
+                        <h1>Our Memories</h1>
+                        <p class="muted">Every picture holds a little piece of us.</p>
+                    </div>
+
+                    <div class="topbar-heart">📷</div>
+                </div>
+
+                <div class="memory-intro">
+                    <span>🌷</span>
+                    <p>
+                        Eight little windows into our world.
+                        Tap any picture to see it more closely.
+                    </p>
+                </div>
+
+                <div class="memory-grid">
+
+                    <button class="memory-card" data-photo="./Assets/photo1.jpg"
+                            data-caption="A little piece of our world 💗">
+                        <img src="./Assets/photo1.jpg" alt="Our memory one" loading="lazy">
+                        <span class="memory-overlay">♡ A favorite moment</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo2.jpg"
+                            data-caption="A moment worth keeping 🌸">
+                        <img src="./Assets/photo2.jpg" alt="Our memory two" loading="lazy">
+                        <span class="memory-overlay">♡ A beautiful memory</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo3.jpg"
+                            data-caption="One for the memory book 💕">
+                        <img src="./Assets/photo3.jpg" alt="Our memory three" loading="lazy">
+                        <span class="memory-overlay">♡ Just us</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo4.jpg"
+                            data-caption="A little moment, a lot of love ❤️">
+                        <img src="./Assets/photo4.jpg" alt="Our memory four" loading="lazy">
+                        <span class="memory-overlay">♡ So special</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo5.jpg"
+                            data-caption="A memory close to my heart 💗">
+                        <img src="./Assets/photo5.jpg" alt="Our memory five" loading="lazy">
+                        <span class="memory-overlay">♡ Forever cherished</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo6.jpg"
+                            data-caption="A little happiness, captured 🌷">
+                        <img src="./Assets/photo6.jpg" alt="Our memory six" loading="lazy">
+                        <span class="memory-overlay">♡ Sweet moments</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo7.jpg"
+                            data-caption="One more reason to smile 💖">
+                        <img src="./Assets/photo7.jpg" alt="Our memory seven" loading="lazy">
+                        <span class="memory-overlay">♡ Our universe</span>
+                    </button>
+
+                    <button class="memory-card" data-photo="./Assets/photo8.jpg"
+                            data-caption="And a thousand more memories to come ✨">
+                        <img src="./Assets/photo8.jpg" alt="Our memory eight" loading="lazy">
+                        <span class="memory-overlay">♡ To more memories</span>
+                    </button>
+
+                </div>
+
+                <p class="small-note">
+                    These photos are loaded from your local Assets folder.
+                    Replace them with your favorite pictures whenever you want.
+                </p>
+
+            </section>
+
+
+            <!-- LOVE LETTERS -->
+            <section class="page-section" id="letters">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">WORDS FROM MY HEART 💌</p>
+                        <h1>Love Letters</h1>
+                        <p class="muted">For the girl who means the world to me.</p>
+                    </div>
+
+                    <div class="topbar-heart">💌</div>
+                </div>
+
+                <div class="letter-intro">
+                    <div class="letter-flower">🌸</div>
+                    <h2>To my Ella,</h2>
+                    <p>
+                        Some feelings are too big for a simple message.
+                        So here's a little place for the words my heart
+                        will always have for you.
+                    </p>
+                </div>
+
+                <div class="letter-grid">
+
+                    <button class="letter-card"
+                            data-letter="first">
+                        <span class="letter-card-icon">💗</span>
+                        <span class="letter-label">LETTER 01</span>
+                        <h3>To the girl I choose</h3>
+                        <p>A little reminder of why my heart chose you.</p>
+                        <span class="read-letter">Open letter →</span>
+                    </button>
+
+                    <button class="letter-card"
+                            data-letter="distance">
+                        <span class="letter-card-icon">🌙</span>
+                        <span class="letter-label">LETTER 02</span>
+                        <h3>When I miss you</h3>
+                        <p>For the days when the distance feels a little too much.</p>
+                        <span class="read-letter">Open letter →</span>
+                    </button>
+
+                    <button class="letter-card"
+                            data-letter="forever">
+                        <span class="letter-card-icon">🌷</span>
+                        <span class="letter-label">LETTER 03</span>
+                        <h3>My promise to you</h3>
+                        <p>About the love I want to build with you.</p>
+                        <span class="read-letter">Open letter →</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SPECIAL DAYS -->
+            <section class="page-section" id="special">
+
+                <div class="topbar">
+                    <div>
+                        <p class="eyebrow">OUR LITTLE MILESTONES 🎀</p>
+                        <h1>Special Days</h1>
+                        <p class="muted">The dates that make our story ours.</p>
+                    </div>
+
+                    <div class="topbar-heart">🎂</div>
+                </div>
+
+                <div class="anniversary-hero">
+                    <span class="anniversary-icon">💝</span>
+                    <p class="eyebrow">OUR LOVE ANNIVERSARY</p>
+                    <h2>October 2</h2>
+                    <p>The day our forever began.</p>
+                    <div class="anniversary-countdown" id="anniversaryCountdown">
+                        Counting our next anniversary...
+                    </div>
+                </div>
+
+                <div class="special-grid">
+
+                    <div class="special-card">
+                        <div class="special-icon">💑</div>
+                        <span class="timeline-date">OCTOBER 2, 2025</span>
+                        <h3>Our Anniversary</h3>
+                        <p>The day we officially became Arry and Ella.</p>
+                        <span class="memory-tag">Every year, forever</span>
+                    </div>
+
+                    <div class="special-card">
+                        <div class="special-icon">🎂</div>
+                        <span class="timeline-date">JULY 3</span>
+                        <h3>Arry's Birthday</h3>
+                        <p>A birthday made even more special by our first meeting.</p>
+                        <span class="memory-tag">July 3, 2026 was unforgettable</span>
+                    </div>
+
+                    <div class="special-card">
+                        <div class="special-icon">🌹</div>
+                        <span class="timeline-date">OUR FIRST MEETING</span>
+                        <h3>The Distance Disappeared</h3>
+                        <p>Our first hug, our first kiss, and four precious days.</p>
+                        <span class="memory-tag">July 3, 2026</span>
+                    </div>
+
+                    <div class="special-card">
+                        <div class="special-icon">✨</div>
+                        <span class="timeline-date">THE FUTURE</span>
+                        <h3>More Firsts to Come</h3>
+                        <p>More dates, adventures, birthdays, and milestones together.</p>
+                        <span class="memory-tag">Our story continues 💗</span>
+                    </div>
+
+                </div>
+
+                <div class="future-note">
+                    <span>♡</span>
+                    <h2>Here's to every tomorrow.</h2>
+                    <p>May we keep finding reasons to choose each other.</p>
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="main-footer">
+                <p>Made with an unreasonable amount of love 💗</p>
+                <span>ArLa Universe · Arry & Ella · Est. October 2, 2025</span>
+            </footer>
+
+        </main>
+    </div>
+
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="modal" id="photoModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="photoModal"></div>
+
+        <div class="photo-modal-content">
+            <button class="modal-close" data-close="photoModal"
+                    aria-label="Close photo">×</button>
+
+            <img id="lightboxImage" src="" alt="Expanded memory">
+            <p id="lightboxCaption"></p>
+        </div>
+    </div>
+
+
+    <!-- LETTER MODAL -->
+    <div class="modal" id="letterModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close="letterModal"></div>
+
+        <article class="letter-paper">
+            <button class="modal-close" data-close="letterModal"
+                    aria-label="Close letter">×</button>
+
+            <span class="letter-paper-flower">🌷</span>
+            <p class="eyebrow">A LETTER FROM ARRY</p>
+            <h2 id="letterTitle">To my Ella</h2>
+
+            <div id="letterBody" class="letter-body"></div>
+
+            <p class="signature">Forever your Arry, ♡</p>
+        </article>
+    </div>
+
+
+    <!-- TOAST MESSAGE -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
